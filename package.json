@@ -1,0 +1,34 @@
+{
+  "name": "renova",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpConfig.js",
+  "dependencies": {
+    "browser-sync": "^2.18.2",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "browser-sync": "^2.18.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-css-spriter": "^0.3.3",
+    "gulp-css-spritesmith": "0.0.5",
+    "gulp-jshint": "^2.0.4",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.1.2",
+    "jshint": "^2.9.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,42 @@
+/*创建job和关闭标签删除*/
+.ui-dialog .ui-dialog-titlebar-close{
+	display:none;
+}
+.ui-dialog .ui-dialog-buttonpane button{
+	background:#f5b55b;
+}
+#dialog-form label{
+	font-size:14px;
+	font-weight:700;
+}
+#jobname,#describe,#create_appname,#app_describe,#copyname{
+	border:1px solid #999;
+	width:260px;height:30px;font-size:14px;padding:2px 5px;
+	margin-left:10px;
+}
+#describe,#app_describe{
+	height:80px;
+	margin-top: 10px;
+  margin-bottom: -40px;
+}
+hr{
+
+	margin:0!important;
+	border:1px solid #ccc!important;
+	margin-bottom:20px!important;
+
+}
+.speBack{
+	font-size:14px!important;
+	background:#ccc!important;
+	margin-right:60px!important;
+	width:70px!important;
+}
+.speDistance{margin-right:60px!important;
+font-size:14px!important;
+width:70px!important;}
+.speBackOff{
+	background:#e26a61!important;
+	font-size:14px!important;
+	letter-spacing:4px;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> Rnova </title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="static/css/dest/custom.min.css" rel="stylesheet">
+    <!-- PNotify -->
+    <link href="https://cdn.bootcss.com/pnotify/3.2.1/pnotify.css" rel="stylesheet">
+  </head>
+
+  <body class="login">
+    <div>
+      <a class="hiddenanchor" id="signup"></a>
+      <a class="hiddenanchor" id="signin"></a>
+
+      <div class="login_wrapper">
+        <div class="animate form login_form">
+          <section class="login_content">
+            <form>
+              <h1>Login Form</h1>
+              <div>
+                <input type="text" class="form-control" placeholder="Username" required="" id="username" />
+              </div>
+              <div>
+                <input type="password" class="form-control" placeholder="Password" required="" id="password" />
+              </div>
+              <div>
+                <a class="btn btn-default submit" id="loginBtn">Log in</a>
+              </div>
+              <div class="clearfix"></div>
+              <div class="separator">
+                <div class="clearfix"></div>
+                <br />
+                <div>
+                  <h1>Rnova</h1>
+                  <p>©2017 XtalPi</p>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+
+      </div>
+    </div>
+
+  <!-- jQuery -->
+  <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+  <!-- PNotify -->
+  <script src="https://cdn.bootcss.com/pnotify/3.2.1/pnotify.js"></script>
+  <script src="static/js/all.js"></script>
+  <script>
+    $('input').on('keyup',function(e){
+        if(e.keyCode == 13){
+            $('#loginBtn').click();
+        }
+    });
+
+    $('#loginBtn').click(function(){
+        var username = $('#username').val();
+        var password = $('#password').val();
+        $.braggAjax({url:'/login/check',data:{username:username,password:password},successfn:function(d){
+            if(d.errorType == 0){
+                try{
+                    localStorage.setItem('username',d.data.username);
+                    localStorage.setItem('usertype',d.data.type);
+                }catch(e){
+                    console.log('set userinfo error')
+                }
+                window.location.href = '/';
+            }else{
+                new PNotify({
+                      title: 'Regular Notice',
+                      text: d.message || 'Check me out! I\'m a notice.',
+                      styling: 'bootstrap3'
+                  });
+            }
+        }});
+    });
+  </script>
+  </body>
+</html>

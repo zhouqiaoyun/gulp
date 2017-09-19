@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--<link rel="stylesheet" type="text/css" href="static/css/dest/base.css"/>-->
+		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<title>index</title>
+		<style type="text/css">
+					.navbar{margin-bottom:0px;}
+	        .all_labs li{
+	            overflow: hidden;
+	            list-style: none;
+	            float: left;
+	            /*margin-left:130px ;*/
+	            width: 300px;
+	            height: 225px;
+	            position: relative;
+	            margin-top: 100px;
+							border:1px solid #000;
+	        }
+	        .all_labs li a img{
+	            width: 100%;
+	            height: auto;
+	        }
+	        .all_labs li span{
+	            display: none;
+	            width: 300px;
+	            height: 0px;
+	            background: #000;
+	            opacity: 0.6;
+	            position: absolute;
+	            bottom: 0;
+							/*margin-left:-45px;*/
+	        }
+	        .all_labs li span p{
+	            color: #FFF;
+	        }
+		</style>
+	</head>
+	<body>
+		<!--hearder-->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+		    <div class="navbar-header">
+		        <a class="navbar-brand" href="#">Revova</a>
+		    </div>
+		    <div>
+		        <ul class="nav navbar-nav navbar-left">
+		            <li class="dropdown">
+		                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		                    Labs
+		                    <b class="caret"></b>
+		                </a>
+		                <ul class="dropdown-menu">
+		                    <li><a href="#">ADMET Perdiction</a></li>
+		                    <li class="divider"></li>
+		                    <li><a href="#">Target Matching</a></li>
+		                    <li class="divider"></li>
+		                    <li><a href="#">Molecule generation</a></li>
+		                    <li class="divider"></li>
+		                    <li><a href="#">Pocket Finding</a></li>
+		                    <li class="divider"></li>
+		                    <li><a href="#">Molecule screening</a></li>
+		                </ul>
+		            </li>
+		        </ul>
+		        <p class="navbar-text navbar-left">Tasks</p>
+		        <p class="navbar-text navbar-right">退出</p>
+		    </div>
+			</div>
+		</nav>
+		<div class="col-xs-12 col-sm-12" style="background:#3b4b62;color:#fff;">
+				<h1>ADMET</h1>
+				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco
+					 laboris nisi ut aliquip ex ea commodo consequat.
+				</p>
+		 </div>
+		<!--Five Labs-->
+		<div class="container all_labs">
+		   <div class="row">
+		      <div class="col-md-4" >
+		        <li>
+							<h2>ADMET</h2>
+			        <span class="showDetail">
+			            <p>1111</p>
+			            <p>2222</p>
+			            <p>3333</p>
+			        </span>
+			    </li>
+		      </div>
+		      <div class="col-md-4" >
+		        <li>
+			        <h2>target</h2>
+			        <span class="showDetail">
+			            <p>1111</p>
+			            <p>2222</p>
+			            <p>3333</p>
+			        </span>
+			    </li>
+		      </div>
+		      <div class="col-md-4">
+		         <li>
+			       <h2>mol</h2>
+			        <span class="showDetail">
+			            <p>1111</p>
+			            <p>2222</p>
+			            <p>3333</p>
+			        </span>
+			    </li>
+		      </div>
+		       <div class="col-md-4">
+						 <li>
+		        	<h2>pocket</h2>
+			        <span class="showDetail">
+			            <p>1111</p>
+			            <p>2222</p>
+			            <p>3333</p>
+			        </span>
+			    	</li>
+		      </div>
+		       <!-- <div class="col-md-4"></div> -->
+		       <div class="col-md-4">
+		         <li>
+			        <h2>mol</h2>
+			        <span class="showDetail">
+			            <p>1111</p>
+			            <p>2222</p>
+			            <p>3333</p>
+			        </span>
+			    </li>
+		      </div>
+		   </div>
+		</div>
+	</body>
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$('.all_labs li').hover(
+            (function(){
+                $(this).find('.showDetail').css('display','inline-block');
+                $(this).find('.showDetail').stop().animate({height:'120px'},500);
+            }),
+            (function(){
+                $(this).find('.showDetail').stop().animate({height:'0px'},500,function(){
+                    $(this).find('.showDetail').css("display","none");
+                });
+
+            })
+    	);
+	</script>
+</html>
